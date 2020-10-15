@@ -1,0 +1,17 @@
+
+
+.character-div{
+    margin-top: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-ul{
+    list-style: none;
+}
+
+.character-li{
+    font-family: sans-serif;
+
+}

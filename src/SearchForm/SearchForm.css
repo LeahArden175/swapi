@@ -1,0 +1,25 @@
+
+.search-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    text-align: center;
+}
+
+
+.form-label{
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+.text-box{
+
+}
+
+.form-submit{
+    background-color: rgb(21, 59, 21);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,
+
+}
