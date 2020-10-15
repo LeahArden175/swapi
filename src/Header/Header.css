@@ -1,0 +1,22 @@
+header {
+  text-align: center;
+  filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+header img {
+  display: inline-block;
+  height: 50px;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px;
+  color: white;
+}

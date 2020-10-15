@@ -1,13 +1,13 @@
 
 
 .character-div{
-    margin-top: 40px;
     display:flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.character-ul{
+.characterList{
     list-style: none;
 }
 

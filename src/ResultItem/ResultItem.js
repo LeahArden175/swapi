@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import './ResultItem.css';
 
 export default class ResultItem extends Component {
   render() {
     return (
-      <li>
+      <li className="characterItem">
         <h3>NAME:{this.props.name}</h3>
         <p>BIRTH YEAR: {this.props.birth_year}</p>
         <p>HEIGHT:{this.props.height}</p>

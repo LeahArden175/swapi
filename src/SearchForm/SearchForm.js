@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './SearchForm.css'
 //import config from '../config';
 
 export default class SearchForm extends Component {
@@ -17,16 +18,16 @@ export default class SearchForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search-div">
         <form onSubmit={this.handleDataSubmit}>
-          <input type="text" name="search"></input>
+          <input className="input" type="text" name="search"></input>
           <select onChange={this.props.handleFilterChange}>
-              <option id="people/?search">Characters</option>
-              <option id="spaceships/?search">Starships</option>
-              <option id="species/?search">Species</option>
-              <option id="planets/?search">Planets</option>
-              <option id="vehicles/?search">Vehicles</option>
-              <option id="films/?search">Films</option>
+              <option id="people">Characters</option>
+              <option id="spaceships">Starships</option>
+              <option id="species">Species</option>
+              <option id="planets">Planets</option>
+              <option id="vehicles">Vehicles</option>
+              <option id="films">Films</option>
           </select>
           <button type="submit">Search!</button>
         </form>
