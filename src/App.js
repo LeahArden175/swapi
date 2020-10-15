@@ -7,27 +7,50 @@ import "./App.css";
 class App extends Component {
 
   state={
-    search: " skywalker",
-    characters: []
+    search: "null",
+    characters: [],
+    filterVal: "null"
   }
 
 
   fetchCharacter =(data) =>{
-    fetch(`${config.API_ENDPOINT}/people/?search=${this.state.search}`)
+    const {search} = data;
+    //const filter = (searchFilter !== " ") ? `${searchFilter}` : '';
+    fetch(`${config.API_ENDPOINT}/people/?search=${search}`)
       .then(response => response.json())
-      .then(jsonData => this.handleSearchReturn(jsonData.name))
+      .then(jsonData => this.handleSearchReturn(jsonData.results))
+      .catch(error => console.log(`Error: ${error.message}`))
     }
 
     handleSearchReturn = (characters) => {
       this.setState({
         characters: characters
+
       })
+    }
+/*
+    handleFilterReturn = (filterVal) => {
+      this.setState({
+        filterVal : filterVal
+      })
+    }
+    */
+
+    handleFilterChange = (event) => {
+      const option = event.target.value;
+      //console.log(option);
+      this.setState({
+          filterVal: option
+      })
+      console.log(this.state.filterVal)
+      
     }
 
 
   componentDidMount(){
     const data ={
-      search: this.state.search
+      search: this.state.search,
+      filterVal: " "
     }
     this.fetchCharacter(data)
   }
@@ -39,8 +62,8 @@ class App extends Component {
     return (
       <div className="app">
           <h1>Star Wars Search</h1>
-        <SearchForm fetchCharacter={this.fetchCharacter}/>
-        <ResultList characters={this.state.characters}/>
+        <SearchForm fetchCharacter={this.fetchCharacter} handleFilterChange={event => this.handleFilterChange(event)}/>
+        <ResultList characters={this.state.characters} />
       </div>
     );
   }

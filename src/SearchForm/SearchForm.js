@@ -13,25 +13,21 @@ export default class SearchForm extends Component {
     this.props.fetchCharacter(data);
   };
 
-  /*
-    handleDataSubmit = (event) => {
-        event.preventDefault();
-        console.log('submit worked');
-        const form = new FormData(event.currentTarget);
-        const data = {
-            searchTerm: form.get("searchTerm"),
-            printType: form.get("printType"),
-            searchFilter: form.get("searchFilter")
-        }
-        this.props.fetchBook(data);
-    }
-    */
+
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleDataSubmit}>
           <input type="text" name="search"></input>
+          <select onChange={this.props.handleFilterChange}>
+              <option id="people/?search">Characters</option>
+              <option id="spaceships/?search">Starships</option>
+              <option id="species/?search">Species</option>
+              <option id="planets/?search">Planets</option>
+              <option id="vehicles/?search">Vehicles</option>
+              <option id="films/?search">Films</option>
+          </select>
           <button type="submit">Search!</button>
         </form>
       </div>

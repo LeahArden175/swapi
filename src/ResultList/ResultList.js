@@ -8,8 +8,15 @@ export default class ResultList extends Component {
     return this.props.characters.map((character ) => {
       return(
         <ResultItem 
+          key={character.created}
           name={character.name}
+          birth_year={character.birth_year}
           height={character.height}
+          mass={character.mass}
+          eye_color={character.eye_color}
+          hair_color={character.hair_color}
+          homeworld={character.homeworld}
+          skin_color={character.skin_color}
         />
       )
     })
