@@ -6,11 +6,12 @@ export default class SearchForm extends Component {
   handleDataSubmit = (event) => {
     event.preventDefault();
     console.log("button worked");
-    const searchData = new FormData(event.currentTarget);
+    const form = new FormData(event.currentTarget);
     const data = {
-      search: searchData.get("search"),
+      search: form.get("search"),
+      filterVal: form.get("filterValue")
     };
-    console.log(data)
+    console.log("searchForm", data)
     this.props.fetchCharacter(data);
   };
 
@@ -28,13 +29,18 @@ export default class SearchForm extends Component {
             id="search"
             required
             />
-          <select onChange={this.props.handleFilterChange}>
-              <option id="people">Characters</option>
-              <option id="spaceships">Starships</option>
-              <option id="species">Species</option>
-              <option id="planets">Planets</option>
-              <option id="vehicles">Vehicles</option>
-              <option id="films">Films</option>
+          <select 
+            name="filterValue" 
+            id="filterValue" 
+            defaultValue="people"
+            onChange={this.props.handleFilterChange}
+          >
+              <option value="people">Characters</option>
+              <option value="starships">Starships</option>
+              <option value="species">Species</option>
+              <option value="planets">Planets</option>
+              <option value="vehicles">Vehicles</option>
+              <option value="films">Films</option>
           </select>
           <button type="submit">Search!</button>
         </form>

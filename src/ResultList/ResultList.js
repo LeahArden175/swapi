@@ -4,20 +4,52 @@ import "./ResultList.css";
 
 export default class ResultList extends Component {
   getCharacter = () => {
+    console.log("from resultList", this.state);
     return this.props.characters.map((character) => {
-      return (
-        <ResultItem
-          key={character.created}
-          name={character.name}
-          birth_year={character.birth_year}
-          height={character.height}
-          mass={character.mass}
-          eye_color={character.eye_color}
-          hair_color={character.hair_color}
-          homeworld={character.homeworld}
-          skin_color={character.skin_color}
-        />
-      );
+      if (this.props.filterVal === "people") {
+        return (
+          <li key={character.created}>
+            <h2>{character.name}</h2>
+          </li>
+        );
+      } else if (this.props.filterVal === "species") {
+        return (
+          <li key={character.created}>
+            <h2>{character.name}</h2>
+            <p>{character.language}</p>
+          </li>
+        );
+      } else if (this.props.filterVal === "films") {
+        return (
+          <li key={character.created}>
+            <h2>{character.title}</h2>
+            <p>{character.release_date}</p>
+          </li>
+        );
+      } else if(this.props.filterVal === "starships"){
+        return (
+          <li key={character.created}>
+            <h2>{character.name}</h2>
+            <p>{character.starship_class}</p>
+          </li>
+        );
+      } else if (this.props.filterVal === "vehicles"){
+        return (
+          <li key={character.created}>
+            <h2>{character.name}</h2>
+            <p>{character.manufacturer}</p>
+          </li>
+        );
+      } else {
+        if(this.props.filterVal === "planets"){
+          return (
+            <li key={character.created}>
+              <h2>{character.name}</h2>
+              <p>{character.population}</p>
+            </li>
+          );
+          }
+      }
     });
   };
 

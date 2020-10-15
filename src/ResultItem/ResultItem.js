@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import './ResultItem.css';
 
 export default class ResultItem extends Component {
+
+    
+
+
   render() {
     return (
       <li className="characterItem">
