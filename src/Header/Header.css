@@ -19,4 +19,12 @@ h1 {
   font-size: 50px;
   margin: 20px;
   color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+    color: white;
+    filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }

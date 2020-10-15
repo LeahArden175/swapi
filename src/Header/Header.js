@@ -10,6 +10,7 @@ export default function Header(){
                 <img src={StarWarsLogo} alt="Star Wars"/>
                 <h1>Search</h1>
             </div>
+            <p>Search for characters, species, and more from the Star Wars Universe</p>
         </header>
     )
 }

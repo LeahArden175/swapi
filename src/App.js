@@ -7,7 +7,7 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    search: "skywalker",
+    search: "null",
     characters: [],
     filterVal: "null",
   };
@@ -32,7 +32,7 @@ class App extends Component {
         filterVal : filterVal
       })
     }
-    */
+  */
 
   handleFilterChange = (event) => {
     const option = event.target.value;

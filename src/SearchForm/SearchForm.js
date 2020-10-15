@@ -19,8 +19,15 @@ export default class SearchForm extends Component {
   render() {
     return (
       <div className="search-div">
-        <form onSubmit={this.handleDataSubmit}>
-          <input className="input" type="text" name="search"></input>
+        <form onSubmit={this.handleDataSubmit} className="form">
+          <input 
+            className="input" 
+            placeholder="Search here!"
+            type="text" 
+            name="search"
+            id="search"
+            required
+            />
           <select onChange={this.props.handleFilterChange}>
               <option id="people">Characters</option>
               <option id="spaceships">Starships</option>
